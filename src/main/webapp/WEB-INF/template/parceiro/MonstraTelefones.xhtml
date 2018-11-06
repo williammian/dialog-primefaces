@@ -1,0 +1,23 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<p:dataTable id="datTabMostraTelefones" var="telefone"
+		value="#{pesquisaClienteBean.clienteSelecionado.telefones}" rows="5"
+		rowsPerPageTemplate="10, 15, 20" paginator="true"
+		paginatorAlwaysVisible="false" paginatorPosition="bottom"
+		emptyMessage="Nenhum Telefone associado">
+
+		<f:facet name="header">
+			Telefones Associados
+		</f:facet>
+
+		<p:column headerText="Número" style="text-align: center">
+			<h:outputText value="#{telefone.numero}" />
+		</p:column>
+		
+	</p:dataTable>
+
+</ui:composition>
